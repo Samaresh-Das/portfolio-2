@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700;900&display=swap");
+
+.font-intro1 {
+  font-family: "Inconsolata", monospace;
+  font-weight: 900;
+}
+
+.font-intro2 {
+  font-family: "Inconsolata", monospace;
+  font-weight: 700;
+}
+
+.font-intro3 {
+  font-family: "Inconsolata", monospace;
+  font-weight: 400;
+}
+
+.photo img {
+  margin: auto;
+}
