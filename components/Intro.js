@@ -19,7 +19,7 @@ const Intro = () => {
         </div>
         <div className="photo pt-[60px] relative md:w-[200rem] md:pt-0 ">
           <img
-            src="./assets/intro-text.png"
+            src="./Assets/intro-text.png"
             alt="background code"
             className="md:h-[35rem]"
           />
