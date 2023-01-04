@@ -71,11 +71,62 @@ const Navbar = () => {
     </div>
   );
 
+  const desktopNavbar = (
+    <nav class=" hidden md:block  px-2 sm:px-4 py-2.5 rounded ">
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul class="flex flex-col p-4 mt-4  rounded-lg  md:flex-row md:space-x-20 md:mt-0 md:text-sm md:text-[20px]">
+          <li>
+            <a
+              href="#about"
+              class="block py-2 pl-3 pr-4 text-[#F0E3CA] rounded hover:text-[#FF8303] md:p-0 "
+              aria-current="page"
+            >
+              About Me
+            </a>
+          </li>
+          <li>
+            <a
+              href="#experience"
+              class="block py-2 pl-3 pr-4 text-[#F0E3CA] hover:text-[#FF8303] md:border-0  md:p-0  "
+            >
+              My Experience
+            </a>
+          </li>
+          <li>
+            <a
+              href="#skills"
+              class="block py-2 pl-3 pr-4 text-[#F0E3CA] hover:text-[#FF8303] md:border-0  md:p-0  "
+            >
+              Skills
+            </a>
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="block py-2 pl-3 pr-4 text-[#F0E3CA] hover:text-[#FF8303] md:border-0  md:p-0  "
+            >
+              Projects
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contacts"
+              class="block py-2 pl-3 pr-4 text-[#F0E3CA]  md:border-0  md:p-0  "
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
+
   return (
     <Fragment>
       <div className="px-8px py-16px flex flex-row justify-between">
         <Name />
         {mobileNav}
+        {desktopNavbar}
         {mobileNavbar}
       </div>
     </Fragment>
