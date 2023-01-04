@@ -20,7 +20,9 @@ const Experience = () => {
         ))}
       </ul>
       <div className="my-4">
-        <Button path={data.certificate} text="Certificate" />
+        {data.certificate && (
+          <Button path={data.certificate} text="Certificate" />
+        )}
       </div>
     </div>
   ));

@@ -1,5 +1,15 @@
 const experienceData = [
   {
+    companyName: "Writopanda Ai",
+    jobTitle: "Front-End Developer",
+    timeLine: "Jan 2022 - Present | Remote",
+    responsibility: [
+      "Worked on real-world project.",
+      "Gained experience in React or Next Js",
+    ],
+    id: 1,
+  },
+  {
     companyName: "Business Web Solutions",
     jobTitle: "Web Developer Intern",
     timeLine: "Apr 2022 - Jun 2022 | Remote ",
@@ -10,7 +20,7 @@ const experienceData = [
     ],
     certificate:
       "https://drive.google.com/file/d/1QcyY7bMZKV-eDvKQpxhlUc47h3b8OKS_/view",
-    id: 1,
+    id: 2,
   },
   {
     companyName: "Solar Secure Solutions",
@@ -23,7 +33,7 @@ const experienceData = [
     ],
     certificate:
       "https://drive.google.com/file/d/1u5YtZNgnchSDq0lW8RnO429XBQOiFRqX/view",
-    id: 2,
+    id: 3,
   },
 ];
 
