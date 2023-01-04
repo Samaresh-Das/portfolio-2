@@ -10,7 +10,7 @@ const Footer = () => {
           <Name />
           <h3 className="text-[#F0E3CA] text-[24px] font-intro3 text-center mt-[30px]">
             If you liked my work and skills and you need me, feel free to reach
-            me. I'm ready to talk to you.
+            me. I&apos;m ready to talk to you.
           </h3>
         </div>
         <Contacts />

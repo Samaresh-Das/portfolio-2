@@ -4,7 +4,10 @@ import { projects } from "../data/projectData";
 
 const Cards = () => {
   const projectDatas = projects.map((data) => (
-    <div className=" rounded-lg shadow-md bg-[#21201D] border-2 border-[#ff8303] mx-auto md:mx-[auto] w-[285px] md:w-[500px] ">
+    <div
+      className=" rounded-lg shadow-md bg-[#21201D] border-2 border-[#ff8303] mx-auto md:mx-[auto] w-[285px] md:w-[500px]"
+      key={data.id}
+    >
       <a href="#">
         <img className="rounded-t-lg" src={data.image} alt="" />
       </a>

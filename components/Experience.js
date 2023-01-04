@@ -4,16 +4,19 @@ import experienceData from "../data/ExperiencData";
 
 const Experience = () => {
   const experienceCard = experienceData.map((data) => (
-    <div class=" p-6 md:px-10 bg-[#21201D] border-4 border-[#F0E3CA] rounded-lg experiences w-[285px] md:w-auto mx-auto md:mx-10 my-0">
-      <h3 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+    <div
+      className=" p-6 md:px-10 bg-[#21201D] border-4 border-[#F0E3CA] rounded-lg experiences w-[285px] md:w-auto mx-auto md:mx-10 my-0"
+      key={data.id}
+    >
+      <h3 className="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
         {data.companyName}
       </h3>
-      <h4 class="mb-2 text-1xl font-bold tracking-tight text-gray-900 dark:text-white">
+      <h4 className="mb-2 text-1xl font-bold tracking-tight text-gray-900 dark:text-white">
         {data.jobTitle} <span className="font-light">({data.timeLine})</span>
       </h4>
-      <ul class="m-2 font-normal text-[#fefae0] list-disc list-inside">
-        {data.responsibility.map((role) => (
-          <li>{role}</li>
+      <ul className="m-2 font-normal text-[#fefae0] list-disc list-inside">
+        {data.responsibility.map((role, i) => (
+          <li key={i}>{role}</li>
         ))}
       </ul>
       <div className="my-4">

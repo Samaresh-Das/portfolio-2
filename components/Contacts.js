@@ -18,6 +18,7 @@ const Contacts = () => {
         <a
           href={sc.text === "Email" ? `mailto:${sc.data}` : sc.data}
           target="_blank"
+          rel="noopener noreferrer"
         >
           <p className="text-center text-[#F0E3CA] text-[16px] mx-5 my-3">
             {sc.text}

@@ -10,6 +10,7 @@ const experienceData = [
     ],
     certificate:
       "https://drive.google.com/file/d/1QcyY7bMZKV-eDvKQpxhlUc47h3b8OKS_/view",
+    id: 1,
   },
   {
     companyName: "Solar Secure Solutions",
@@ -22,6 +23,7 @@ const experienceData = [
     ],
     certificate:
       "https://drive.google.com/file/d/1u5YtZNgnchSDq0lW8RnO429XBQOiFRqX/view",
+    id: 2,
   },
 ];
 
