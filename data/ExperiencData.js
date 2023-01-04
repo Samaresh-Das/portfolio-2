@@ -2,7 +2,7 @@ const experienceData = [
   {
     companyName: "Writopanda Ai",
     jobTitle: "Front-End Developer",
-    timeLine: "Jan 2022 - Present | Remote",
+    timeLine: "Jan 2023 - Present | Remote",
     responsibility: [
       "Worked on real-world project.",
       "Gained experience in React or Next Js",
