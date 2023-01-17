@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <Fragment>
       <Head>
-        <title>Samaresh's Portfolio</title>
+        <title>Samaresh&apos;s Portfolio</title>
       </Head>
       <Navbar />
       <Intro />
