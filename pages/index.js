@@ -1,3 +1,4 @@
+import  Head  from "next/head";
 import { Fragment } from "react";
 import AboutMe from "../components/AboutMe";
 import Experience from "../components/Experience";
@@ -10,6 +11,9 @@ import Skills from "../components/Skills";
 export default function Home() {
   return (
     <Fragment>
+      <Head>
+        <title>Samaresh's Portfolio</title>
+      </Head>
       <Navbar />
       <Intro />
       <AboutMe />

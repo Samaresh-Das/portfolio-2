@@ -19,6 +19,7 @@ const Experience = () => {
           <li key={i}>{role}</li>
         ))}
       </ul>
+      {data.skills && <h3 className="m-2 font-bold text-[#fefae0] list-disc list-inside text-[19px]"> Skills - {data.skills}</h3>}
       <div className="my-4">
         {data.certificate && (
           <Button path={data.certificate} text="Certificate" />

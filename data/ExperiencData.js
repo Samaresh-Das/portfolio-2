@@ -4,9 +4,12 @@ const experienceData = [
     jobTitle: "Front-End Developer",
     timeLine: "Jan 2023 - Present | Remote",
     responsibility: [
-      "Worked on real-world project.",
-      "Gained experience in React or Next Js",
+      "Led 100% front end for the startup.",
+      "Integrate payment and authentication APIs from the backend.",
+      'Connect the backend to the front-end.',
+      'Converted Figma to code.'
     ],
+    skills: 'React Js, Tailwind CSS, OAuth2, Auths, APIs.',
     id: 1,
   },
   {
