@@ -5,7 +5,7 @@ import { projects } from "../data/projectData";
 const Cards = () => {
   const projectDatas = projects.map((data) => (
     <div
-      className=" rounded-lg shadow-md bg-[#21201D] border-2 border-[#ff8303] mx-auto md:mx-[auto] w-[285px] md:w-[500px]"
+      className=" rounded-lg shadow-md bg-[#21201D] border-2 border-[#ff8303] mx-auto md:mx-[auto] w-[285px] md:w-[500px] transition ease-in-out delay-150 hover:scale-105 duration-300"
       key={data.id}
     >
       <a href="#">

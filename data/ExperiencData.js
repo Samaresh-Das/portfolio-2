@@ -1,18 +1,5 @@
 const experienceData = [
   {
-    companyName: "Writopanda Ai",
-    jobTitle: "Front-End Developer",
-    timeLine: "Jan 2023 - Present | Remote",
-    responsibility: [
-      "Led 100% front end for the startup.",
-      "Integrate payment and authentication APIs from the backend.",
-      'Connect the backend to the front-end.',
-      'Converted Figma to code.'
-    ],
-    skills: 'React Js, Tailwind CSS, OAuth2, Auths, APIs.',
-    id: 1,
-  },
-  {
     companyName: "Business Web Solutions",
     jobTitle: "Web Developer Intern",
     timeLine: "Apr 2022 - Jun 2022 | Remote ",
@@ -23,7 +10,7 @@ const experienceData = [
     ],
     certificate:
       "https://drive.google.com/file/d/1QcyY7bMZKV-eDvKQpxhlUc47h3b8OKS_/view",
-    id: 2,
+    id: 1,
   },
   {
     companyName: "Solar Secure Solutions",
@@ -36,7 +23,7 @@ const experienceData = [
     ],
     certificate:
       "https://drive.google.com/file/d/1u5YtZNgnchSDq0lW8RnO429XBQOiFRqX/view",
-    id: 3,
+    id: 2,
   },
 ];
 

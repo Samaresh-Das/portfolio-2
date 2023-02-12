@@ -5,7 +5,7 @@ import experienceData from "../data/ExperiencData";
 const Experience = () => {
   const experienceCard = experienceData.map((data) => (
     <div
-      className=" p-6 md:px-10 bg-[#21201D] border-4 border-[#F0E3CA] rounded-lg experiences w-[285px] md:w-auto mx-auto md:mx-10 my-0"
+      className=" p-6 md:px-10 bg-[#21201D] border-4 border-[#F0E3CA] rounded-lg experiences w-[285px] md:w-auto mx-auto md:mx-10 my-0 md:relative md:h-[300px]"
       key={data.id}
     >
       <h3 className="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -19,12 +19,11 @@ const Experience = () => {
           <li key={i}>{role}</li>
         ))}
       </ul>
-      {data.skills && <h3 className="m-2 font-bold text-[#fefae0] list-disc list-inside text-[19px]"> Skills - {data.skills}</h3>}
-      <div className="my-4">
+      {data.skills && <h3 className="m-2 font-bold text-[#fefae0] list-disc list-inside text-[19px]"> Skills - {data.skills}</h3>}      
         {data.certificate && (
-          <Button path={data.certificate} text="Certificate" />
+          <Button path={data.certificate} text="Certificate" className ='transition ease-in-out delay-150 hover:scale-110 duration-300' classNameDiv='md:absolute md:bottom-[20px] ' />
         )}
-      </div>
+      
     </div>
   ));
   return (
