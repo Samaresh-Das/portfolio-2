@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
+import { TypeAnimation } from 'react-type-animation';
 
 const Intro = () => {
   const [dynamicClassLeft, setDynamicClassLeft] = useState('md:-translate-x-32 md:-translate-y-16 md:opacity-25')
@@ -14,9 +15,15 @@ const Intro = () => {
     <Fragment>
       <div className="py-128px px-68px intro flex flex-col md:flex-row">
         <div className={`md:px-10 md:my-auto ${dynamicClassLeft} md:duration-500 md:transform md:transition-all md:ease-out`}>
-          <h1 className="text-[#FF8303] font-intro1 text-[40px] text-center">
-            Samaresh Das
-          </h1>
+          {/* <h1 className="text-[#FF8303] font-intro1 text-[40px] text-center"> */}
+          <TypeAnimation
+            sequence={['Samaresh Das', 1000, '']}
+            speed={10} 
+            wrapper="h1"
+            className="text-[#FF8303] font-intro1 text-[40px] text-center"
+            repeat={Infinity}
+          />
+          {/* </h1> */}
           <h2 className="text-[#F0E3CA] text-[32px] font-intro2 text-center py-5">
             Frontend Developer
           </h2>
