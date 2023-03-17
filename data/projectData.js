@@ -1,5 +1,15 @@
 export const projects = [
   {
+    title: "Sam's Dev Blog",
+    description:
+      "A MERN application that allows users to create, read, update, and delete blog posts, with authentication and authorization features. Used MongoDB for relational database, a rich text editor, and Amazon S3 for image storage, resulting in a faster and better user experience. Also integrated popular web development frameworks and Tailwind CSS for a responsive and visually appealing user interface, showcasing their proficiency in the MERN stack.",
+    image: "/Assets/7.png",
+    tags: ["Mongo", "Express", "React", "Node", "AWS S3"],
+    // code: "https://github.com/Samaresh-Das/My-Blog-MERN",
+    live: "sams-dev-blog.vercel.app/",
+    id: 6,
+  },
+  {
     title: "Sam's Campgrounds",
     description:
       "Using Node, Express Js and MongoDB I built this full CRUD application for users to rent campgrounds across the world. Users can safely register, login, post new campgrounds, upload images, edit existing ones and also give reviews. It uses mongo relations. Implement authentication and authorizations. It also includes a map using Mapbox API.",
@@ -7,7 +17,7 @@ export const projects = [
     tags: ["Mongo", "Express", "EJS", "Node"],
     code: "https://github.com/Samaresh-Das/Yelp-Camp.git",
     live: "https://sammy-camp.cyclic.app/",
-    id: 0,
+    id: 5,
   },
   {
     title: "Sam's Tech Store",
@@ -17,7 +27,7 @@ export const projects = [
     tags: ["Next JS", "React-Icons", "Sanity IO", "CSS"],
     code: "https://github.com/Samaresh-Das/Sam-s-Tech-Store-Eccomerce",
     live: "https://sam-s-tech-store.netlify.app/",
-    id: 1,
+    id: 4,
   },
   {
     title: "Sam's Shop",
@@ -27,7 +37,7 @@ export const projects = [
     tags: ["React/Redux", "Context API", "React-Icons", "Bootstrap", "CSS"],
     code: "https://github.com/Samaresh-Das/My-Shop-React.git",
     live: "https://sams-cloth-store.netlify.app/",
-    id: 2,
+    id: 3,
   },
   {
     title: "Bank Website",
@@ -37,7 +47,7 @@ export const projects = [
     tags: ["React", "Tailwind CSS"],
     code: "https://github.com/Samaresh-Das/Bank-React.git",
     live: "https://sam-dev-bank.pages.dev/",
-    id: 3,
+    id: 2,
   },
   {
     title: "React To-Do List",
@@ -47,7 +57,7 @@ export const projects = [
     tags: ["React Js"],
     code: "https://github.com/Samaresh-Das/React-Todo-list.git",
     live: "https://react-todo-list-dlh.pages.dev/",
-    id: 4,
+    id: 1,
   },
   {
     title: "TMDB Movie site",
@@ -57,7 +67,7 @@ export const projects = [
     tags: ["HTML", "CSS", "JS"],
     code: "https://github.com/Samaresh-Das/TMDB-movie-api-project.git",
     // live: "https://google.com",
-    id: 5,
+    id: 0,
   },
 ];
 
