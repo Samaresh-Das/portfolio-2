@@ -6,7 +6,7 @@ export const projects = [
     image: "/Assets/7.png",
     tags: ["Mongo", "Express", "React", "Node", "AWS S3"],
     // code: "https://github.com/Samaresh-Das/My-Blog-MERN",
-    live: "sams-dev-blog.vercel.app/",
+    live: "https://sams-dev-blog.vercel.app/",
     id: 6,
   },
   {
@@ -50,6 +50,16 @@ export const projects = [
     id: 2,
   },
   {
+    title: "Firebase Authentication React Form",
+    description:
+      "In this app firebase is used for authenticating users using google or normal email password. It is built with vite react and tailwind css",
+    image: "/Assets/8.png",
+    tags: ["React Js", "Firebase Auth", "OAuth", "Tailwind CSS"],
+    code: "https://github.com/Samaresh-Das/firebase-auth.git",
+    live: "https://firebaseauth-breezeai.netlify.app/",
+    id: 0,
+  },
+  {
     title: "React To-Do List",
     description:
       "It simply uses React Js to make a to-do list. This app is not connected to any database though. ",
@@ -57,16 +67,6 @@ export const projects = [
     tags: ["React Js"],
     code: "https://github.com/Samaresh-Das/React-Todo-list.git",
     live: "https://react-todo-list-dlh.pages.dev/",
-    id: 1,
-  },
-  {
-    title: "TMDB Movie site",
-    description:
-      "It fetches movie and tv list from TMDB api and displays them in a page",
-    image: "/Assets/4.png",
-    tags: ["HTML", "CSS", "JS"],
-    code: "https://github.com/Samaresh-Das/TMDB-movie-api-project.git",
-    // live: "https://google.com",
     id: 0,
   },
 ];

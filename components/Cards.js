@@ -21,7 +21,9 @@ const Cards = () => {
           </a>
           <p className="mb-3 font-normal text-[#fefae0]">{data.description}.</p>
           <div className="mx-auto flex justify-around">
-            {data.live && <Button path={data.live} text="Live" />}
+            {data.live && (
+              <Button path={data.live} text="Live" className="md:my-auto" />
+            )}
             {data.code && <Button path={data.code} text="Code" />}
           </div>
         </div>
