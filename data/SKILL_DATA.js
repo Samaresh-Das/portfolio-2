@@ -31,16 +31,21 @@ const skill_data = [
   },
   {
     id: 7,
+    logo: "./Assets/ts.png",
+    text: "Typescript",
+  },
+  {
+    id: 8,
     logo: "./Assets/html.png",
     text: "HTML",
   },
   {
-    id: 8,
+    id: 9,
     logo: "./Assets/css.png",
     text: "CSS",
   },
   {
-    id: 9,
+    id: 10,
     logo: "./Assets/aws.png",
     text: "AWS",
   },

@@ -1,31 +1,39 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { TypeAnimation } from 'react-type-animation';
+import { TypeAnimation } from "react-type-animation";
 
 const Intro = () => {
-  const [dynamicClassLeft, setDynamicClassLeft] = useState('md:-translate-x-32 md:-translate-y-16 md:opacity-25')
+  const [dynamicClassLeft, setDynamicClassLeft] = useState(
+    "md:-translate-x-32 md:-translate-y-16 md:opacity-25"
+  );
 
-  const [dynamicClassRight, setDynamicClassRight] = useState('md:translate-x-32 md:-translate-y-16 md:opacity-25')
+  const [dynamicClassRight, setDynamicClassRight] = useState(
+    "md:translate-x-32 md:-translate-y-16 md:opacity-25"
+  );
 
-  useEffect(() => {md:
-    setDynamicClassLeft('md:translate-x-0 md:opacity-100 md:-translate-y-0')
-    setDynamicClassRight('md:-translate-x-0 md:opacity-100 md:-translate-y-0')
-  }, [])
+  useEffect(() => {
+    md: setDynamicClassLeft(
+      "md:translate-x-0 md:opacity-100 md:-translate-y-0"
+    );
+    setDynamicClassRight("md:-translate-x-0 md:opacity-100 md:-translate-y-0");
+  }, []);
 
   return (
     <Fragment>
       <div className="py-128px px-68px intro flex flex-col md:flex-row">
-        <div className={`md:px-10 md:my-auto ${dynamicClassLeft} md:duration-500 md:transform md:transition-all md:ease-out`}>
+        <div
+          className={`md:px-10 md:my-auto ${dynamicClassLeft} md:duration-500 md:transform md:transition-all md:ease-out`}
+        >
           {/* <h1 className="text-[#FF8303] font-intro1 text-[40px] text-center"> */}
           <TypeAnimation
-            sequence={['Samaresh Das', 1000, '']}
-            speed={10} 
+            sequence={["Samaresh Das", 1000, ""]}
+            speed={10}
             wrapper="h1"
             className="text-[#FF8303] font-intro1 text-[40px] text-center"
             repeat={Infinity}
           />
           {/* </h1> */}
           <h2 className="text-[#F0E3CA] text-[32px] font-intro2 text-center py-5">
-            Frontend Developer
+            Full Stack Developer
           </h2>
           <p className="text-[#F0E3CA] text-[24px] font-intro3 text-center">
             Hi there, Samaresh here, welcome to my portfolio. Glad you landed
@@ -33,7 +41,9 @@ const Intro = () => {
             can see some of my projects and more about me. Thanks.
           </p>
         </div>
-        <div className={`photo pt-[60px] relative md:w-[200rem] md:pt-0 ${dynamicClassRight} md:duration-500 md:transform md:transition-all md:ease-out`}>
+        <div
+          className={`photo pt-[60px] relative md:w-[200rem] md:pt-0 ${dynamicClassRight} md:duration-500 md:transform md:transition-all md:ease-out`}
+        >
           <img
             src="./Assets/intro-text.png"
             alt="background code"
