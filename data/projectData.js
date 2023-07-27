@@ -7,7 +7,7 @@ export const projects = [
     tags: ["Mongo", "Express", "React", "Node", "AWS S3"],
     // code: "https://github.com/Samaresh-Das/My-Blog-MERN",
     live: "https://sams-dev-blog.vercel.app/",
-    id: 6,
+    id: 7,
   },
   {
     title: "Sam's Campgrounds",
@@ -17,13 +17,30 @@ export const projects = [
     tags: ["Mongo", "Express", "EJS", "Node"],
     code: "https://github.com/Samaresh-Das/Yelp-Camp.git",
     live: "https://sammy-camp.cyclic.app/",
+    id: 6,
+  },
+  {
+    title: "Dribble Clone",
+    description:
+      "Dribble clone using Next.js 13 and Tailwind CSS. The application features seamless Google authentication with JWT and Next Auth integration, a robust GraphQL-based backend for efficient data management, and impressive UI designs with Tailwind CSS. Leveraging TypeScript, the project maintains superior code quality and offers comprehensive CRUD functionality for project management",
+    image: "/Assets/5.png",
+    tags: [
+      "Next Js 12",
+      "Grafbase",
+      "GraphQL",
+      "Tailwind CSS",
+      "Next Auth",
+      "Typescript",
+    ],
+    code: "https://github.com/Samaresh-Das/dribble_clone",
+    live: "https://dribble-clone-umber.vercel.app/",
     id: 5,
   },
   {
     title: "Sam's Shop",
     description:
       "A shopping e-commerce page with cart functionality. Users can toggle between dark mode, change the view style of items. Implemented with Razorpay payment gateway for seamless payment",
-    image: "/Assets/5.png",
+    image: "/Assets/4.png",
     tags: [
       "React/Redux",
       "Context API",
@@ -64,7 +81,7 @@ export const projects = [
     tags: ["React Js", "Firebase Auth", "OAuth", "Tailwind CSS"],
     code: "https://github.com/Samaresh-Das/firebase-auth.git",
     live: "https://firebaseauth-breezeai.netlify.app/",
-    id: 0,
+    id: 1,
   },
   {
     title: "Next Js Task List",

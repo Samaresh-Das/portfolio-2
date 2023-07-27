@@ -49,6 +49,11 @@ const skill_data = [
     logo: "./Assets/aws.png",
     text: "AWS",
   },
+  {
+    id: 11,
+    logo: "./Assets/graphql.png",
+    text: "GraphQL",
+  },
 ];
 
 export default skill_data;
