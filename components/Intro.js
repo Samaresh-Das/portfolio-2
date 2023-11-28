@@ -36,9 +36,10 @@ const Intro = () => {
             Full Stack Developer
           </h2>
           <p className="text-[#F0E3CA] text-[24px] font-intro3 text-center">
-            Hi there, Samaresh here, welcome to my portfolio. Glad you landed
-            here. I aim to innovate web and software for the world. Below you
-            can see some of my projects and more about me. Thanks.
+            👋 Hi there, Samaresh here! 🚀 Welcome to my portfolio. 🌐 Glad you
+            landed here. 🌟 I aim to innovate web and software for the world. 💻
+            Below you can see some of my projects and learn more about me. 📂
+            Thanks! 🙏
           </p>
         </div>
         <div

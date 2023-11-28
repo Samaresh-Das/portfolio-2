@@ -4,7 +4,7 @@ import skill_data from "../data/SKILL_DATA";
 const Skills = () => {
   const cards = skill_data.map((skill) => (
     <div
-      className="flex flex-row md:flex-col h-[60px] md:h-[300px] w-[285px] md:min-w-[150px] bg-[#21201D] rounded-lg mx-auto md:my-4 md:mx-4 "
+      className="flex flex-row md:flex-col h-[60px] md:h-[300px] w-[285px] md:min-w-[150px] bg-[#21201D] rounded-lg mx-auto md:my-4 md:mx-4 transition ease-in-out delay-150 hover:scale-110 duration-300"
       key={skill.id}
     >
       <img

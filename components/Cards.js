@@ -20,7 +20,7 @@ const Cards = () => {
             </h5>
           </a>
           <p className="mb-3 font-normal text-[#fefae0]">{data.description}.</p>
-          <div className="mx-auto flex justify-around">
+          <div className="mx-auto flex justify-around abs">
             {data.live && (
               <Button path={data.live} text="Live" className="md:my-auto" />
             )}
