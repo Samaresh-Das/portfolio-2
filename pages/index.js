@@ -1,4 +1,4 @@
-import  Head  from "next/head";
+import Head from "next/head";
 import { Fragment } from "react";
 import AboutMe from "../components/AboutMe";
 import Experience from "../components/Experience";
