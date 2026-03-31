@@ -1,106 +1,81 @@
-export const projects = [
+export const wpProjectData = [
   {
-    title: "Sam's Dev Blog",
-    description:
-      "A MERN application that allows users to create, read, update, and delete blog posts, with authentication and authorization features. Used MongoDB for relational database, a rich text editor, and Amazon S3 for image storage, resulting in a faster and better user experience. Also integrated popular web development frameworks and Tailwind CSS for a responsive and visually appealing user interface, showcasing their proficiency in the MERN stack.",
-    image: "/Assets/7.png",
-    tags: ["Mongo", "Express", "React", "Node", "AWS S3"],
-    // code: "https://github.com/Samaresh-Das/My-Blog-MERN",
-    live: "https://sams-dev-blog.vercel.app/",
-    id: 7,
-  },
-  {
-    title: "UrbanAura Ecommerce Shop",
-    description:
-      "An e-commerce web application was developed using Vite and React TypeScript, a platform for users to browse and add products to their cart. State management of the shopping cart and user authentication were handled using Redux and the Clerk library, respectively, enhancing the security and functionality of the application. Furthermore, the application was integrated with the Razorpay payment gateway for seamless transactions. The user interface was styled using Tailwind CSS, improving the overall user experience.",
-    image: "/Assets/3.png",
-    tags: [
-      "React",
-      "Vite",
-      "Tailwind CSS",
-      "Clerk Auth",
-      "Redux",
-      "Razorpay payment gateway",
+    "id": "wp-001",
+    "title": "Nidaan — Healthcare Brand Digital Transformation",
+    "client": "Nidaan Dental Diagnostics & Radiology Group",
+    "year": "2024",
+    "tags": ["WordPress", "Custom CSS", "JavaScript", "CMS", "SEO"],
+    "description": "Modernized a legacy dental diagnostics brand founded in 1985 with a tech-forward digital identity. Implemented a hybrid development model with static HTML templates for complex sections and WordPress for CMS scalability.",
+    "keyTakeaway": "A transformation from a static presence to a modern, precision-driven digital identity.",
+    "images": [
+      "https://sam-portfolio-679.s3.ap-south-1.amazonaws.com/NidaanWP+(1).png",
+      "https://sam-portfolio-679.s3.ap-south-1.amazonaws.com/NidaanWP+(2).png",
+      "https://sam-portfolio-679.s3.ap-south-1.amazonaws.com/NidaanWP+(3).png",
+      "https://sam-portfolio-679.s3.ap-south-1.amazonaws.com/NidaanWP+(4).png",
     ],
-    code: "https://github.com/Samaresh-Das/E-commerce_cloth_store",
-    live: "https://urbanaura.vercel.app/",
-    id: 6,
-  },
-  {
-    title: "Sam's Campgrounds",
-    description:
-      "Using Node, Express Js and MongoDB I built this full CRUD application for users to rent campgrounds across the world. Users can safely register, login, post new campgrounds, upload images, edit existing ones and also give reviews. It uses mongo relations. Implement authentication and authorizations. It also includes a map using Mapbox API.",
-    image: "/Assets/1.png",
-    tags: ["Mongo", "Express", "EJS", "Node"],
-    code: "https://github.com/Samaresh-Das/Yelp-Camp.git",
-    live: "https://sammy-camp.cyclic.app/",
-    id: 5,
-  },
-  {
-    title: "Dribble Clone",
-    description:
-      "Dribble clone using Next.js 13 and Tailwind CSS. The application features seamless Google authentication with JWT and Next Auth integration, a robust GraphQL-based backend for efficient data management, and impressive UI designs with Tailwind CSS. Leveraging TypeScript, the project maintains superior code quality and offers comprehensive CRUD functionality for project management",
-    image: "/Assets/5.png",
-    tags: [
-      "Next Js 12",
-      "Grafbase",
-      "GraphQL",
-      "Tailwind CSS",
-      "Next Auth",
-      "Typescript",
+    "highlights": [
+      "Constraint-first thinking to balance custom code with CMS manageability",
+      "AI-assisted planning to break complex layouts into modular components",
+      "Hybrid dev model: static HTML templates + custom CSS/JS + WordPress CMS",
+      "Multiple redesign cycles for brand alignment and clinical professionalism",
+      "Cross-browser testing, mobile responsiveness, and performance optimization"
     ],
-    code: "https://github.com/Samaresh-Das/dribble_clone",
-    live: "https://dribble-clone-umber.vercel.app/",
-    id: 4,
+    "live": "https://nidaandental.com/",
   },
   {
-    title: "Sam's Shop",
-    description:
-      "A shopping e-commerce page with cart functionality. Users can toggle between dark mode, change the view style of items. Implemented with Razorpay payment gateway for seamless payment",
-    image: "/Assets/4.png",
-    tags: [
-      "React/Redux",
-      "Context API",
-      "React-Icons",
-      "Bootstrap",
-      "CSS",
-      "Razorpay",
+    "id": "wp-002",
+    "title": "Nexority Infotech — 3D Animated Tech Experience",
+    "client": "Nexority Infotech",
+    "year": "2024",
+    "tags": ["WordPress", "GSAP", "3D Animations", "Custom JS", "Figma"],
+    "description": "Engineered visually captivating 3D animations and interactive experiences inside WordPress for a technology-driven organization, balancing visual ambition with long-term CMS stability.",
+    "keyTakeaway": "A strong example of engineering-led design executed with precision inside a CMS-first ecosystem.",
+    "images": [
+      "https://sam-portfolio-679.s3.ap-south-1.amazonaws.com/nexorityWP+(2).png",
+      "https://sam-portfolio-679.s3.ap-south-1.amazonaws.com/nexorityWP+(3).png",
+      "https://sam-portfolio-679.s3.ap-south-1.amazonaws.com/nexorityWP+(1).png",
+      "https://sam-portfolio-679.s3.ap-south-1.amazonaws.com/nexorityWP+(4).png",
     ],
-    code: "https://github.com/Samaresh-Das/My-Shop-React.git",
-    live: "https://sams-cloth-store.netlify.app/",
-    id: 3,
+    "highlights": [
+      "Deep platform analysis to assess native WordPress capabilities",
+      "AI-assisted planning to deconstruct complex 3D layouts into modular components",
+      "Selective custom engineering with HTML templates and JS-driven animation logic",
+      "GSAP (GreenSock) for pixel-accurate animations and smooth transitions",
+      "Cross-browser and multi-device testing with animation-heavy page optimization"
+    ],
+    "live": "https://nexorityinfotech.com/",
   },
   {
-    title: "Sam's Tech Store",
-    description:
-      "It uses Next Js, Context API, Sanity(for CMS), React-Icons, CSS. An e-commerce site for tech related stuffs with cart functionality. All the item data come from Sanity Content Management System",
-    image: "/Assets/6.png",
-    tags: ["Next JS", "React-Icons", "Sanity IO", "CSS"],
-    code: "https://github.com/Samaresh-Das/Sam-s-Tech-Store-Eccomerce",
-    live: "https://sam-s-tech-store.netlify.app/",
-    id: 2,
-  },
-  {
-    title: "Firebase Authentication React Form",
-    description:
-      "In this app firebase is used for authenticating users using google or normal email password. It is built with vite react and tailwind css",
-    image: "/Assets/8.png",
-    tags: ["React Js", "Firebase Auth", "OAuth", "Tailwind CSS"],
-    code: "https://github.com/Samaresh-Das/firebase-auth.git",
-    live: "https://firebaseauth-breezeai.netlify.app/",
-    id: 1,
-  },
-  {
-    title: "Next Js Task List",
-    description:
-      "Developed a Next.js project using Mobx state tree, TypeScript, and Tailwind CSS. Implemented a todo app with CRUD functionality, leveraging local storage for data persistence.",
-    image: "/Assets/9.png",
-    tags: ["Next Js", "MobX State Tree", "Typescript", "Tailwind CSS"],
-    code: "https://github.com/Samaresh-Das/task-app.git",
-    live: "https://task-app-sepia.vercel.app/",
-    id: 0,
-  },
-];
+    "id": "wp-003",
+    "title": "C-Quel — Full Diagnostic Rebuild & SEO Overhaul",
+    "client": "C-Quel Management Services Pvt Ltd",
+    "year": "2024",
+    "tags": ["WordPress", "SEO", "Semrush Audit", "EEAT", "Content Strategy"],
+    "description": "Diagnosed and rebuilt a broken HR & Compliance firm's digital presence from the ground up. Addressed 331 critical errors, 1,349 warnings, and 1,500+ slug issues while rewriting all content to meet Google EEAT standards.",
+    "keyTakeaway": "A website that looks unprofessional to enterprise HR decision-makers will lose deals before a conversation even starts.",
+    "images": [
+      "https://sam-portfolio-679.s3.ap-south-1.amazonaws.com/cquelWP+(1).png",
+      "https://sam-portfolio-679.s3.ap-south-1.amazonaws.com/cquelWP+(2).png",
+      "https://sam-portfolio-679.s3.ap-south-1.amazonaws.com/cquelWP+(3).png",
+      "https://sam-portfolio-679.s3.ap-south-1.amazonaws.com/cquelWP+(4).png",
+      "https://sam-portfolio-679.s3.ap-south-1.amazonaws.com/cquelWP+(5).png"
+    ],
+    "highlights": [
+      "Complete website anatomy audit using Semrush, GA4, and manual review",
+      "Rebuilt site architecture with correct URL structures and clean internal linking",
+      "Rewrote all copy to meet Google EEAT standards with FAQs and clear CTAs",
+      "Replaced Naruto animations and drone imagery with professional compliance design",
+      "Redesigned testimonial section with photos, names, designations, and company logos"
+    ],
+    "stats": [
+      { "value": "65%", "label": "Initial Site Health (target >90%)" },
+      { "value": "331", "label": "Critical Errors Fixed" },
+      { "value": "3,000%+", "label": "Traffic Growth on Comparable Sites" },
+      { "value": "19K+", "label": "Active Users in 28 Days (comparable client)" }
+    ],
+    "live": "https://cquel.com/",
+  }
+]
 
 // export const TimeLineData = [
 //   { year: 2017, text: "Started my journey" },
