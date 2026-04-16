@@ -55,12 +55,12 @@ const Experience = () => {
       const data = snapshot.val();
       const values = data
         ? Object.values(data).filter(
-            (item) =>
-              item &&
-              item.companyName &&
-              item.jobTitle &&
-              Array.isArray(item.responsibility)
-          )
+          (item) =>
+            item &&
+            item.companyName &&
+            item.jobTitle &&
+            Array.isArray(item.responsibility)
+        )
         : [];
       setExperienceData(values);
       setLoading(false);
@@ -140,7 +140,7 @@ const Experience = () => {
                 >
                   {/* Timeline node dot */}
                   <motion.span
-                    className="hidden md:block absolute left-1/2 -translate-x-1/2 top-7 w-4 h-4 rounded-full bg-[#FF8303] z-10"
+                    className={`hidden md:block absolute ${isLeft ? "left-[49.2%]" : "right-[49.2%]"} top-7 w-4 h-4 rounded-full bg-[#FF8303] z-10`}
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
@@ -158,58 +158,58 @@ const Experience = () => {
                   >
                     <TiltCard>
                       <div className="bg-[#21201D] border border-[#F0E3CA]/10 hover:border-[#FF8303]/40 rounded-2xl p-7 md:p-8 transition-colors duration-300 group">
-                      {/* Company name */}
-                      <h3 className="text-[#F0E3CA] text-[22px] font-intro2 group-hover:text-[#FF8303] transition-colors duration-200">
-                        {exp.companyName}
-                      </h3>
+                        {/* Company name */}
+                        <h3 className="text-[#F0E3CA] text-[22px] font-intro2 group-hover:text-[#FF8303] transition-colors duration-200">
+                          {exp.companyName}
+                        </h3>
 
-                      {/* Role + timeline */}
-                      <div className="flex flex-wrap items-center gap-2 mt-1.5 mb-5">
-                        <span className="text-[#FF8303] font-intro3 text-[15px]">
-                          {exp.jobTitle}
-                        </span>
-                        <span className="text-[#F0E3CA]/40 text-[13px] font-intro3">
-                          · {exp.timeLine}
-                        </span>
-                      </div>
-
-                      {/* Responsibilities */}
-                      {Array.isArray(exp.responsibility) && (
-                        <ul className="space-y-2">
-                          {exp.responsibility.map((item, i) => (
-                            <li
-                              key={i}
-                              className="flex items-start gap-2.5 text-[#F0E3CA]/70 text-[14px] font-intro3 leading-relaxed"
-                            >
-                              <span className="text-[#FF8303] mt-1 flex-shrink-0 text-[10px]">
-                                ▶
-                              </span>
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-
-                      {/* Skills */}
-                      {exp.skills && (
-                        <p className="mt-4 text-[13px] text-[#F0E3CA]/50 font-intro3 border-t border-[#F0E3CA]/8 pt-4">
-                          <span className="text-[#FF8303]">Stack —</span>{" "}
-                          {exp.skills}
-                        </p>
-                      )}
-
-                      {/* Certificate button */}
-                      {exp.certificate && (
-                        <div className="mt-5">
-                          <Button
-                            path={exp.certificate}
-                            text="View Certificate"
-                            className="text-[13px]"
-                          />
+                        {/* Role + timeline */}
+                        <div className="flex flex-wrap items-center gap-2 mt-1.5 mb-5">
+                          <span className="text-[#FF8303] font-intro3 text-[15px]">
+                            {exp.jobTitle}
+                          </span>
+                          <span className="text-[#F0E3CA]/40 text-[13px] font-intro3">
+                            · {exp.timeLine}
+                          </span>
                         </div>
-                      )}
-                    </div>
-                  </TiltCard>
+
+                        {/* Responsibilities */}
+                        {Array.isArray(exp.responsibility) && (
+                          <ul className="space-y-2">
+                            {exp.responsibility.map((item, i) => (
+                              <li
+                                key={i}
+                                className="flex items-start gap-2.5 text-[#F0E3CA]/70 text-[14px] font-intro3 leading-relaxed"
+                              >
+                                <span className="text-[#FF8303] mt-1 flex-shrink-0 text-[10px]">
+                                  ▶
+                                </span>
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+
+                        {/* Skills */}
+                        {exp.skills && (
+                          <p className="mt-4 text-[13px] text-[#F0E3CA]/50 font-intro3 border-t border-[#F0E3CA]/8 pt-4">
+                            <span className="text-[#FF8303]">Stack —</span>{" "}
+                            {exp.skills}
+                          </p>
+                        )}
+
+                        {/* Certificate button */}
+                        {exp.certificate && (
+                          <div className="mt-5">
+                            <Button
+                              path={exp.certificate}
+                              text="View Certificate"
+                              className="text-[13px]"
+                            />
+                          </div>
+                        )}
+                      </div>
+                    </TiltCard>
                   </motion.div>
                 </div>
               );
