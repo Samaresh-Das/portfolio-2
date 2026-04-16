@@ -18,3 +18,115 @@
 .photo img {
   margin: auto;
 }
+
+/* ═══════════════════════════════════════
+   FLOATING ANIMATION — Profile photo
+   ═══════════════════════════════════════ */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+.float-anim {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════
+   BORDER PULSE — orange ring
+   ═══════════════════════════════════════ */
+@keyframes border-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 131, 3, 0); }
+  50% { box-shadow: 0 0 24px 6px rgba(255, 131, 3, 0.35); }
+}
+
+.border-pulse {
+  animation: border-pulse 3s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════
+   SCROLL INDICATOR BOUNCE
+   ═══════════════════════════════════════ */
+@keyframes bounce-y {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(10px); opacity: 0.5; }
+}
+
+.scroll-bounce {
+  animation: bounce-y 1.8s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════
+   MARQUEE — both directions
+   ═══════════════════════════════════════ */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 24s linear infinite;
+}
+.marquee-track-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 32s linear infinite;
+}
+.marquee-track:hover,
+.marquee-track-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* Edge fade mask */
+.marquee-container {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+/* ═══════════════════════════════════════
+   UNDERLINE DRAW
+   ═══════════════════════════════════════ */
+.underline-draw {
+  position: relative;
+  display: inline-block;
+}
+.underline-draw::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0%;
+  background: #ff8303;
+  border-radius: 2px;
+  transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.underline-draw.drawn::after {
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════
+   TILT CARD
+   ═══════════════════════════════════════ */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease;
+}
