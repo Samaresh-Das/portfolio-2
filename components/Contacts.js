@@ -112,6 +112,25 @@ const Contact = () => {
           and interesting work.
         </motion.p>
 
+        {/* Hire Me CTA */}
+        <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           transition={{ duration: 0.7, delay: 0.4 }}
+           className="mb-16"
+        >
+          <a
+            href="https://hire-sam.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#FF8303] text-black font-intro2 text-[16px] md:text-[18px] hover:scale-105 transition-transform duration-300 shadow-[0_0_20px_rgba(255,131,3,0.3)] hover:shadow-[0_0_30px_rgba(255,131,3,0.5)]"
+          >
+            <span>Hire Me for Freelance Projects</span>
+            <span className="text-xl">↗</span>
+          </a>
+        </motion.div>
+
         {/* Contact rows */}
         <div className="space-y-0">
           {socials.map((sc) => (

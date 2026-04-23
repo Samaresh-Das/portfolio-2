@@ -8,6 +8,7 @@ import Navbar from "../components/Navbar";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import Contact from "../components/Contacts";
+import AgenticAIs from "../components/AgenticAIs";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
       <Experience />
       <Skills />
       <Projects />
+      <AgenticAIs />
       <Contact />
       <Footer />
     </Fragment>
