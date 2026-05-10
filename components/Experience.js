@@ -155,7 +155,7 @@ const Experience = () => {
                             {exp.jobTitle}
                           </span>
                           <span className="w-1.5 h-1.5 rounded-full bg-[#F0E3CA]/20" />
-                          <span className="text-[#F0E3CA]/70 text-[14px] font-intro3 tracking-widest uppercase">
+                          <span className="text-[#F0E3CA]/50 text-[14px] font-intro3 tracking-widest uppercase">
                             {exp.timeLine}
                           </span>
                         </div>
@@ -166,7 +166,7 @@ const Experience = () => {
                             {exp.responsibility.map((item, i) => (
                               <li
                                 key={i}
-                                className="flex items-start gap-3 text-[#F0E3CA]/90 text-[15px] font-intro3 leading-relaxed"
+                                className="flex items-start gap-3 text-[#F0E3CA]/70 text-[15px] font-intro3 leading-relaxed"
                               >
                                 <span className="text-[#FF8303] mt-1.5 flex-shrink-0 text-[8px]">
                                   ◆
@@ -179,7 +179,7 @@ const Experience = () => {
 
                         {/* Skills */}
                         {exp.skills && (
-                          <p className="mt-8 text-[14px] text-[#F0E3CA]/80 font-intro3 border-t border-[#F0E3CA]/15 pt-6 relative z-10">
+                          <p className="mt-8 text-[14px] text-[#F0E3CA]/60 font-intro3 border-t border-[#F0E3CA]/10 pt-6 relative z-10">
                             <span className="text-[#FF8303] mr-2">Stack —</span>
                             {exp.skills}
                           </p>

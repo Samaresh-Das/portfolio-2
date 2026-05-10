@@ -87,14 +87,14 @@ const AboutMe = () => {
           <FadeIn delay={0.3} y={20}>
             <AnimatedText 
               text="I'm a full-stack developer who enjoys building clean, scalable, and maintainable products. My core strength lies in translating ideas into reliable user experiences using modern frontend and backend technologies."
-              className="text-[#F0E3CA] text-[17px] md:text-[18px] font-intro3 leading-relaxed mb-6"
+              className="text-[#F0E3CA]/70 text-[17px] md:text-[18px] font-intro3 leading-relaxed mb-6"
             />
           </FadeIn>
 
           <FadeIn delay={0.4} y={20}>
             <AnimatedText 
               text="I primarily work with the MERN stack and care deeply about UI clarity, performance, and real-world usability. I like shipping things fast — but never sloppy."
-              className="text-[#F0E3CA] text-[17px] md:text-[18px] font-intro3 leading-relaxed"
+              className="text-[#F0E3CA]/70 text-[17px] md:text-[18px] font-intro3 leading-relaxed"
             />
           </FadeIn>
 
@@ -123,7 +123,7 @@ const AboutMe = () => {
               "Clean Code",
             ].map((trait, i) => (
               <FadeIn key={trait} delay={0.6 + i * 0.1} y={15}>
-                <div className="flex items-center gap-3 text-[15px] text-[#F0E3CA]/90 font-intro3 bg-[#151412] border border-[#F0E3CA]/20 rounded-full px-4 py-2 hover:border-[#FF8303]/40 hover:text-[#F0E3CA] transition-colors cursor-default">
+                <div className="flex items-center gap-3 text-[15px] text-[#F0E3CA]/70 font-intro3 bg-[#151412] border border-[#F0E3CA]/10 rounded-full px-4 py-2 hover:border-[#FF8303]/40 hover:text-[#F0E3CA] transition-colors cursor-default">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#FF8303] flex-shrink-0 shadow-[0_0_8px_rgba(255,131,3,0.8)]" />
                   {trait}
                 </div>

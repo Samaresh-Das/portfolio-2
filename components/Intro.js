@@ -112,7 +112,7 @@ const Intro = () => {
             </motion.h2>
             <motion.p
               {...fadeUp(0.9)}
-              className="text-[#F0E3CA]/85 font-intro3 text-[14px] md:text-[16px] leading-relaxed"
+              className="text-[#F0E3CA]/60 font-intro3 text-[14px] md:text-[16px] leading-relaxed"
             >
               From concept to deploy, I build apps that
               <br className="hidden md:block" /> connect and convert.
