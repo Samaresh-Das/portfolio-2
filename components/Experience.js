@@ -1,13 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { app } from "../utils/firebase";
 import Button from "./Button";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import SectionLabel from "./SectionLabel";
-
-gsap.registerPlugin(ScrollTrigger);
+import FadeIn from "./FadeIn";
 
 // Per-card tilt effect
 const TiltCard = ({ children, className }) => {
@@ -19,13 +16,13 @@ const TiltCard = ({ children, className }) => {
     const rect = el.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width - 0.5) * 16;
     const y = ((e.clientY - rect.top) / rect.height - 0.5) * -16;
-    el.style.transform = `perspective(800px) rotateX(${y}deg) rotateY(${x}deg) scale(1.02)`;
+    el.style.transform = `perspective(1000px) rotateX(${y}deg) rotateY(${x}deg) scale(1.02)`;
   };
 
   const handleMouseLeave = () => {
     if (cardRef.current) {
       cardRef.current.style.transform =
-        "perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)";
+        "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
     }
   };
 
@@ -35,7 +32,7 @@ const TiltCard = ({ children, className }) => {
       className={`tilt-card ${className}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ transition: "transform 0.15s ease" }}
+      style={{ transition: "transform 0.2s ease-out", transformStyle: "preserve-3d" }}
     >
       {children}
     </div>
@@ -46,7 +43,15 @@ const Experience = () => {
   const [experienceData, setExperienceData] = useState([]);
   const [loading, setLoading] = useState(true);
   const sectionRef = useRef(null);
-  const lineRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+
+  // Parallax background text
+  const yBgText = useTransform(scrollYProgress, [0, 1], [-200, 200]);
+  const opacityBgText = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0.05, 0]);
 
   useEffect(() => {
     const db = getDatabase(app);
@@ -67,64 +72,42 @@ const Experience = () => {
     });
   }, []);
 
-  // Timeline line draw on scroll
-  useEffect(() => {
-    if (!lineRef.current) return;
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        lineRef.current,
-        { scaleY: 0, transformOrigin: "top center" },
-        {
-          scaleY: 1,
-          duration: 1.5,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 70%",
-            once: true,
-          },
-        }
-      );
-    }, sectionRef);
-    return () => ctx.revert();
-  }, [loading]);
-
   return (
     <section
       ref={sectionRef}
       id="experience"
-      className="py-28 md:py-36 px-6 md:px-12 relative overflow-hidden"
+      className="py-28 md:py-40 px-6 md:px-12 relative overflow-hidden"
     >
-      {/* Decorative background text */}
-      <span
-        className="absolute left-0 top-1/2 -translate-y-1/2 font-intro1 text-[#F0E3CA] select-none pointer-events-none"
-        style={{
-          fontSize: "clamp(80px, 16vw, 200px)",
-          opacity: 0.022,
-          lineHeight: 1,
-          whiteSpace: "nowrap",
-        }}
-        aria-hidden="true"
+      {/* Decorative Parallax Background Text */}
+      <motion.div
+        style={{ y: yBgText, opacity: opacityBgText }}
+        className="absolute left-0 top-1/4 font-intro1 text-[#F0E3CA] select-none pointer-events-none whitespace-nowrap z-0"
       >
-        EXPERIENCE
-      </span>
+        <span style={{ fontSize: "clamp(80px, 16vw, 250px)", lineHeight: 1 }}>
+          EXPERIENCE
+        </span>
+      </motion.div>
 
       <div className="max-w-5xl mx-auto relative z-10">
-        <SectionLabel number="02" label="My Experience" />
-        <h2 className="text-[#FF8303] font-intro2 text-[38px] md:text-[44px] text-center mb-20">
-          My Experience
-        </h2>
+        <FadeIn y={30} className="flex flex-col items-center mb-24">
+          <SectionLabel number="02" label="My Experience" />
+          <h2 className="text-[#F0E3CA] font-intro2 text-[42px] md:text-[54px] text-center mt-6">
+            My <span className="text-[#FF8303]">Experience</span>
+          </h2>
+        </FadeIn>
 
         {/* Timeline container */}
         <div className="relative">
           {/* Timeline vertical line — draws on scroll */}
-          <div
-            ref={lineRef}
-            className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#FF8303] via-[#FF8303]/60 to-transparent hidden md:block"
-            style={{ scaleY: 0, transformOrigin: "top" }}
+          <motion.div
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#FF8303] via-[#FF8303]/40 to-transparent hidden md:block origin-top"
           />
 
-          <div className="space-y-16 md:space-y-24">
+          <div className="space-y-20 md:space-y-32">
             {loading && (
               <p className="text-center text-[#F0E3CA]/50 font-intro3">
                 Loading experience...
@@ -139,50 +122,54 @@ const Experience = () => {
                   className={`relative md:flex ${isLeft ? "md:justify-start" : "md:justify-end"}`}
                 >
                   {/* Timeline node dot */}
-                  <motion.span
-                    className={`hidden md:block absolute ${isLeft ? "left-[49.2%]" : "right-[49.2%]"} top-7 w-4 h-4 rounded-full bg-[#FF8303] z-10`}
+                  <motion.div
+                    className={`hidden md:block absolute ${isLeft ? "left-[49.1%]" : "right-[49.1%]"} top-10 w-5 h-5 rounded-full bg-[#151412] border-[3px] border-[#FF8303] z-10`}
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.3, type: "spring", stiffness: 300 }}
-                    style={{ boxShadow: "0 0 12px rgba(255,131,3,0.6)" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.5, delay: 0.2, type: "spring", stiffness: 300 }}
+                    style={{ boxShadow: "0 0 16px rgba(255,131,3,0.4)" }}
                   />
 
-                  {/* Card */}
+                  {/* Card with Parallax Effect */}
                   <motion.div
-                    initial={{ opacity: 0, x: isLeft ? -60 : 60 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.25 }}
-                    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                    className="md:w-[47%]"
+                    initial={{ opacity: 0, y: 50, x: isLeft ? -50 : 50 }}
+                    whileInView={{ opacity: 1, y: 0, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, type: "spring", stiffness: 60 }}
+                    className="md:w-[45%]"
                   >
                     <TiltCard>
-                      <div className="bg-[#21201D] border border-[#F0E3CA]/10 hover:border-[#FF8303]/40 rounded-2xl p-7 md:p-8 transition-colors duration-300 group">
+                      <div className="bg-[#151412] border border-[#F0E3CA]/10 hover:border-[#FF8303]/30 rounded-3xl p-8 md:p-10 transition-colors duration-500 group shadow-2xl relative overflow-hidden">
+                        {/* Subtle glow on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#FF8303]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
                         {/* Company name */}
-                        <h3 className="text-[#F0E3CA] text-[22px] font-intro2 group-hover:text-[#FF8303] transition-colors duration-200">
+                        <h3 className="text-[#F0E3CA] text-[24px] md:text-[28px] font-intro2 group-hover:text-[#FF8303] transition-colors duration-300 relative z-10">
                           {exp.companyName}
                         </h3>
 
                         {/* Role + timeline */}
-                        <div className="flex flex-wrap items-center gap-2 mt-1.5 mb-5">
-                          <span className="text-[#FF8303] font-intro3 text-[15px]">
+                        <div className="flex flex-wrap items-center gap-3 mt-2 mb-6 relative z-10">
+                          <span className="text-[#FF8303] font-intro3 text-[16px] tracking-wide">
                             {exp.jobTitle}
                           </span>
-                          <span className="text-[#F0E3CA]/40 text-[13px] font-intro3">
-                            · {exp.timeLine}
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#F0E3CA]/20" />
+                          <span className="text-[#F0E3CA]/50 text-[14px] font-intro3 tracking-widest uppercase">
+                            {exp.timeLine}
                           </span>
                         </div>
 
                         {/* Responsibilities */}
                         {Array.isArray(exp.responsibility) && (
-                          <ul className="space-y-2">
+                          <ul className="space-y-3 relative z-10">
                             {exp.responsibility.map((item, i) => (
                               <li
                                 key={i}
-                                className="flex items-start gap-2.5 text-[#F0E3CA]/70 text-[14px] font-intro3 leading-relaxed"
+                                className="flex items-start gap-3 text-[#F0E3CA]/70 text-[15px] font-intro3 leading-relaxed"
                               >
-                                <span className="text-[#FF8303] mt-1 flex-shrink-0 text-[10px]">
-                                  ▶
+                                <span className="text-[#FF8303] mt-1.5 flex-shrink-0 text-[8px]">
+                                  ◆
                                 </span>
                                 {item}
                               </li>
@@ -192,19 +179,19 @@ const Experience = () => {
 
                         {/* Skills */}
                         {exp.skills && (
-                          <p className="mt-4 text-[13px] text-[#F0E3CA]/50 font-intro3 border-t border-[#F0E3CA]/8 pt-4">
-                            <span className="text-[#FF8303]">Stack —</span>{" "}
+                          <p className="mt-8 text-[14px] text-[#F0E3CA]/60 font-intro3 border-t border-[#F0E3CA]/10 pt-6 relative z-10">
+                            <span className="text-[#FF8303] mr-2">Stack —</span>
                             {exp.skills}
                           </p>
                         )}
 
                         {/* Certificate button */}
                         {exp.certificate && (
-                          <div className="mt-5">
+                          <div className="mt-8 relative z-10">
                             <Button
                               path={exp.certificate}
                               text="View Certificate"
-                              className="text-[13px]"
+                              className="text-[14px]"
                             />
                           </div>
                         )}
