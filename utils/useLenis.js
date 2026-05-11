@@ -26,9 +26,11 @@ export function useLenis() {
 
     gsap.ticker.lagSmoothing(0);
 
+    window.lenis = lenis;
     return () => {
       gsap.ticker.remove(tick);
       lenis.destroy();
+      window.lenis = null;
     };
   }, []);
 }

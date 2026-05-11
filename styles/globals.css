@@ -127,3 +127,126 @@ html {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════
+   TECH STACK PILL — shimmer animation
+   ═══════════════════════════════════════════════════ */
+@keyframes pill-shimmer {
+  0%, 100% {
+    border-color: rgba(255, 131, 3, 0.2);
+    box-shadow: 0 0 0px rgba(255, 131, 3, 0);
+  }
+  50% {
+    border-color: rgba(255, 131, 3, 0.55);
+    box-shadow: 0 0 12px rgba(255, 131, 3, 0.15);
+  }
+}
+
+.tech-pill {
+  animation: pill-shimmer 3s ease-in-out infinite;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 131, 3, 0.06) 0%,
+    rgba(255, 131, 3, 0.02) 50%,
+    rgba(255, 131, 3, 0.08) 100%
+  );
+}
+
+.tech-pill:hover {
+  background: rgba(255, 131, 3, 0.12);
+  border-color: rgba(255, 131, 3, 0.6) !important;
+  box-shadow: 0 0 18px rgba(255, 131, 3, 0.25) !important;
+  animation: none;
+  transition: all 0.3s ease;
+}
+
+/* ═══════════════════════════════════════════════════
+   RICH DESCRIPTION — modal HTML content
+   ═══════════════════════════════════════════════════ */
+.rich-description h1,
+.rich-description h2,
+.rich-description h3,
+.rich-description h4 {
+  color: var(--fg);
+  font-family: "Inconsolata", monospace;
+  font-weight: 700;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.rich-description h1 { font-size: 1.6em; }
+.rich-description h2 { font-size: 1.35em; }
+.rich-description h3 { font-size: 1.15em; color: var(--accent); }
+.rich-description h4 { font-size: 1.05em; }
+
+.rich-description p {
+  margin-bottom: 0.75em;
+  line-height: 1.7;
+}
+
+.rich-description ul,
+.rich-description ol {
+  padding-left: 1.4em;
+  margin-bottom: 0.75em;
+}
+
+.rich-description li {
+  margin-bottom: 0.35em;
+  line-height: 1.6;
+}
+
+.rich-description ul li::marker {
+  color: var(--accent);
+}
+
+.rich-description ol li::marker {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.rich-description b,
+.rich-description strong {
+  color: var(--fg);
+  font-weight: 700;
+}
+
+.rich-description a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s;
+}
+
+.rich-description a:hover {
+  opacity: 0.8;
+}
+
+.rich-description blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1em;
+  margin: 1em 0;
+  color: rgba(240, 227, 202, 0.5);
+  font-style: italic;
+}
+
+.rich-description code {
+  background: rgba(255, 131, 3, 0.1);
+  color: var(--accent);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.rich-description pre {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1em 0;
+  border: 1px solid rgba(240, 227, 202, 0.08);
+}
+
+.rich-description pre code {
+  background: none;
+  padding: 0;
+}
