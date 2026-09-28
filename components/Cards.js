@@ -543,7 +543,7 @@ const Cards = () => {
     onValue(projectRef, (snapshot) => {
       const data = snapshot.val();
       const values = data
-        ? Object.values(data).filter((p) => p && p.title)
+        ? Object.values(data).filter((p) => p && p.title && !p.isArchived)
         : [];
       setProjects(values);
       setLoading(false);

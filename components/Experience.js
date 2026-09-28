@@ -64,7 +64,8 @@ const Experience = () => {
             item &&
             item.companyName &&
             item.jobTitle &&
-            Array.isArray(item.responsibility)
+            Array.isArray(item.responsibility) &&
+            !item.isArchived
         )
         : [];
       setExperienceData(values);
